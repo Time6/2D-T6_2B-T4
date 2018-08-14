@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Room
+<<<<<<< HEAD
+=======
+  - Ladder
+>>>>>>> c36c0313ecbf03cffaf1dbd745361aad48e8a9bc
   layers:
   - Default
   - TransparentFX
@@ -14,8 +18,13 @@ TagManager:
   - UI
   - 
   - 
+<<<<<<< HEAD
   - Room
   - 
+=======
+  - Platform
+  - Room
+>>>>>>> c36c0313ecbf03cffaf1dbd745361aad48e8a9bc
   - 
   - 
   - 
