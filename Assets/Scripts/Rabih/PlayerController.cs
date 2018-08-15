@@ -86,9 +86,9 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    void OnColliderStay2D(Collision2D coll)
+    void OnCollisionStay2D(Collision2D coll)
     {
-     if(coll.gameObject.tag == "Ladders")
+     if(coll.gameObject.tag == "Ladder")
         {
             rb.velocity = new Vector2(rb.velocity.x, gettingUpSpeed * axisY);
 
