@@ -6,12 +6,14 @@ public class Log : MonoBehaviour
 {
     private Rigidbody2D rb;
     public float speed = 3f;
+    public float positionX;
+    public float positionZ;
 
 
     void OnEnable()
     {
         speed = 3f;
-        transform.position = new Vector2(-9.66f, -2.4f);
+        transform.position = new Vector2(positionX, positionZ);
     }
     void Start()
     {
@@ -23,9 +25,9 @@ public class Log : MonoBehaviour
             rb.velocity = new Vector2(speed, rb.velocity.y);    
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    void OnTriggerStay2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Room")
+        if (col.gameObject.tag == "Stop")
         {
             gameObject.SetActive(false);
             gameObject.SetActive(true);
