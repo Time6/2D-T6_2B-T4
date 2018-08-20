@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     //movimentação
     private float axisX;
-    private float axisY;
+    
     public float speed;
     public float jumpForce;
     public float groundChecksize;
@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
 
 
 
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
 
 
     void Start()
@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
     {
         
         axisX = Input.GetAxis("Horizontal");
-        axisY = (Input.GetAxis("Vertical"));
+        
             if (Input.GetAxis("Jump") > 0)
         {
             Jump();
