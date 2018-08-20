@@ -5,14 +5,14 @@ using UnityEngine;
 public class Log : MonoBehaviour
 {
     private Rigidbody2D rb;
-    public float speed = 3f;
+    public float speed = 5f;
     public float positionX;
     public float positionZ;
 
 
     void OnEnable()
     {
-        speed = 3f;
+        speed = 5f;
         transform.position = new Vector2(positionX, positionZ);
     }
     void Start()
