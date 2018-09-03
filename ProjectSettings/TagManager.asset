@@ -8,6 +8,8 @@ TagManager:
   - Room
   - Stop
   - Platform
+  - Snake
+  - Scorpion
   layers:
   - Default
   - TransparentFX
