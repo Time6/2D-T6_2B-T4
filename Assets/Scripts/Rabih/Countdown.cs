@@ -9,13 +9,14 @@ public class Countdown : MonoBehaviour {
     float seconds;
     int minutes;
     [SerializeField]Text timeUI;
-   
+    int secondsUI;
 
 
 	void Start () {
 
         seconds = 60f;
         minutes = 7;
+        secondsUI = 0;
 	}
 	
 	// Update is called once per frame
@@ -27,7 +28,8 @@ public class Countdown : MonoBehaviour {
             minutes -= 1;
             seconds = 60f;
         }
-        timeUI.text = minutes.ToString() + ":" + seconds.ToString();
+        secondsUI = (int)seconds;
+        timeUI.text = minutes.ToString() + ":" + secondsUI.ToString();
        
 
 	}

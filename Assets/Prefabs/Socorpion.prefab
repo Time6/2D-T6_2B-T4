@@ -20,9 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4473291058455086}
   - component: {fileID: 212812557280193142}
-  - component: {fileID: 61662546933755872}
   - component: {fileID: 50282787588067218}
   - component: {fileID: 114311475187779020}
+  - component: {fileID: 61731138464220512}
   m_Layer: 0
   m_Name: Socorpion
   m_TagString: Scorpion
@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1423632839342744}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.69, y: -3.41, z: 0}
+  m_LocalPosition: {x: -0.82726526, y: -2.0373745, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -63,7 +63,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &61662546933755872
+--- !u!61 &61731138464220512
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -79,14 +79,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.51, y: 2.01}
+    oldSize: {x: 0.55777776, y: 0.44666666}
     newSize: {x: 2.51, y: 2.01}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.51, y: 2.01}
+  m_Size: {x: 0.55777776, y: 0.44666666}
   m_EdgeRadius: 0
 --- !u!114 &114311475187779020
 MonoBehaviour:
