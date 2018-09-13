@@ -7,6 +7,7 @@ public class DialogueManager : MonoBehaviour {
 
     public Text nameTxt;
     public Text dialogueTxt;
+    public GameObject dialogueBox;
 
     public Queue<string> sentences;
 
@@ -19,7 +20,8 @@ public class DialogueManager : MonoBehaviour {
 	// Update is called once per frame
 	public void StartDialogue(Dialogue dialogue)
     {
-        nameTxt = dialogue.name;
+        dialogueBox.SetActive(true);
+        nameTxt.text = dialogue.name;
 
         sentences.Clear();
         foreach (string sentence in dialogue.sentences)
@@ -45,7 +47,7 @@ public class DialogueManager : MonoBehaviour {
 
     IEnumerator LetterByLeter(string sentence)
     {
-        dialogueTxt.txt = "";
+        dialogueTxt.text = "";
         foreach (char letter in sentence.ToCharArray())
         {
             dialogueTxt.text += letter;
@@ -56,6 +58,6 @@ public class DialogueManager : MonoBehaviour {
 
     void EndDialogue()
     {
-
+        dialogueBox.SetActive(false);
     }
 }

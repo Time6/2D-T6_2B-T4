@@ -7,9 +7,26 @@ public class NPC : MonoBehaviour
 {
 
     public Dialogue dialogue;
+    public GameObject dialogueBox;
 
     public void TriggerDialogue()
     {
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+    }
+
+
+    void OnTriggerStay2D(Collider2D coll)
+    {
+       
+        if (coll.tag == "Player" && Input.GetKeyDown(KeyCode.E))
+        {
+           // if (!dialogueBox.isEnabled)
+          //  {
+                TriggerDialogue();
+           // }
+
+
+        }
+
     }
 }
