@@ -20,10 +20,17 @@ public class NPC : MonoBehaviour
        
         if (coll.tag == "Player" && Input.GetKeyDown(KeyCode.E))
         {
-           // if (!dialogueBox.isEnabled)
-          //  {
-                TriggerDialogue();
-           // }
+           
+           if (!dialogueBox.activeSelf)
+            {
+                  TriggerDialogue();
+             }
+
+              if (dialogueBox.activeSelf)
+             {
+                  FindObjectOfType<DialogueManager>().NextSentence();
+             }
+             
 
 
         }
