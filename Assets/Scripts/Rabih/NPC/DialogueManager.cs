@@ -11,16 +11,20 @@ public class DialogueManager : MonoBehaviour {
 
     public Queue<string> sentences;
 
+ private PlayerController player;
+
 	// Use this for initialization
 	void Start () {
 
         sentences = new Queue<string>();
+         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
 	}
 	
 	// Update is called once per frame
 	public void StartDialogue(Dialogue dialogue)
     {
         dialogueBox.SetActive(true);
+player.talking = true;
         nameTxt.text = dialogue.name;
 
         sentences.Clear();
@@ -59,5 +63,6 @@ public class DialogueManager : MonoBehaviour {
     void EndDialogue()
     {
         dialogueBox.SetActive(false);
+        player.talking = false;
     }
 }

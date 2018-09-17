@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public Transform groundCheck;
     public bool onGround;
     public LayerMask platformMask;
+    public bool talking;
 
     //nas escadas
    public float gettingUpSpeed;
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour
     {
 
         rb = GetComponent<Rigidbody2D>();
+        talking = false;
 
 
     }
@@ -48,6 +50,10 @@ public class PlayerController : MonoBehaviour
     {
         GroundCheck();
         Movimentacao();
+        if(talking)
+        {
+            rb.velocity = new Vector2(0,rb.velocity.y);
+        }
 
     }
 
@@ -55,7 +61,7 @@ public class PlayerController : MonoBehaviour
     void Movimentacao()
     {
 
-        if (axisX != 0 && onGround)
+        if (axisX != 0 && onGround && !talking)
         {
 
             rb.velocity = new Vector2(speed * axisX, rb.velocity.y);
@@ -65,7 +71,7 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
-        if (onGround)
+        if (onGround && !talking)
         {
             rb.velocity = new Vector2 (rb.velocity.x, jumpForce);
         }
