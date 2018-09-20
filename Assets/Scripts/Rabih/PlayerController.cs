@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
 
 
+    public BoxCollider2D[] pathRooms;
+    private int actualRoom;
     void Start()
     {
 
@@ -89,6 +91,22 @@ public class PlayerController : MonoBehaviour
         Gizmos.DrawSphere(groundCheck.position, groundChecksize);
 
 
+    }
+
+    void OnTriggerEnter2D(BoxCollider2D coll)
+    {
+        if(coll.tag == "Room"){
+        if(koalaPunkStarted)
+        {
+            
+         if(coll != pathRooms[actualRoom])
+         {
+             pathRooms[actualRoom] = coll;
+             actualRoom++;
+         }
+
+        }
+        }
     }
 
 
