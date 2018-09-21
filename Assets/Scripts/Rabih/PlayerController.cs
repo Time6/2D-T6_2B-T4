@@ -93,7 +93,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void OnTriggerEnter2D(BoxCollider2D coll)
+    /*void OnTriggerEnter2D(BoxCollider2D coll)
     {
         if(coll.tag == "Room"){
         if(koalaPunkStarted)
@@ -107,7 +107,7 @@ public class PlayerController : MonoBehaviour
 
         }
         }
-    }
+    }*/
 
 
 }

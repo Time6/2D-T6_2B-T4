@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2ab8c792fd1edb42badaec55461c4af, type: 3}
+  m_Name: dragonbonesWess_Data
+  m_EditorClassIdentifier: 
+  dataName: dragonbonesWess
+  dragonBonesJSON: {fileID: 4900000, guid: 7160b595391eb8f47b919a993f03a942, type: 3}
+  textureAtlas:
+  - textureAtlasJSON: {fileID: 4900000, guid: 52175551e7844d14a84144fc302de849, type: 3}
+    texture: {fileID: 2800000, guid: 566ea05a0bfd5db43a172296bfdc954a, type: 3}
+    material: {fileID: 2100000, guid: e6e72a2558bde3444811a94da9c9363c, type: 2}
+    uiMaterial: {fileID: 0}
