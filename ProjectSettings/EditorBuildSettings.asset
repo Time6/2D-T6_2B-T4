@@ -8,10 +8,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Editores/Rabih.unity
     guid: 5a58d5c706ed71b459a80dad49036a2b
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 51c1ecb79037e0f4d820fd1210a93068
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Prototipo1.unity
     guid: b467199c3a9d902479e89219a7781f4c
+  - enabled: 1
+    path: Assets/Scenes/Prototipo2.unity
+    guid: 1c075ae1ca9dbbd4e875efff0dfef6db
   m_configObjects: {}
