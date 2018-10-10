@@ -630,6 +630,31 @@ Prefab:
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114716185279192800, guid: 91c4f61b3c8de2e4a903e66a1c3f8974,
+        type: 2}
+      propertyPath: ladderMask.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 114716185279192800, guid: 91c4f61b3c8de2e4a903e66a1c3f8974,
+        type: 2}
+      propertyPath: ladderCheckStart
+      value: 
+      objectReference: {fileID: 1942400772}
+    - target: {fileID: 114716185279192800, guid: 91c4f61b3c8de2e4a903e66a1c3f8974,
+        type: 2}
+      propertyPath: ladderCheckEnd
+      value: 
+      objectReference: {fileID: 492700595}
+    - target: {fileID: 114716185279192800, guid: 91c4f61b3c8de2e4a903e66a1c3f8974,
+        type: 2}
+      propertyPath: climbingCheckRadius
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114716185279192800, guid: 91c4f61b3c8de2e4a903e66a1c3f8974,
+        type: 2}
+      propertyPath: gettingUpSpeed
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 91c4f61b3c8de2e4a903e66a1c3f8974, type: 2}
   m_IsPrefabParent: 0
@@ -880,19 +905,37 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 61711223590300106, guid: 011151334fcd6f94382577ceb53b3463,
-        type: 2}
-      propertyPath: m_Offset.y
-      value: 0.2924466
-      objectReference: {fileID: 0}
-    - target: {fileID: 61711223590300106, guid: 011151334fcd6f94382577ceb53b3463,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 3.0718145
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 011151334fcd6f94382577ceb53b3463, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &492700594
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 492700595}
+  m_Layer: 10
+  m_Name: LadderCheckEnd
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &492700595
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 492700594}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.67, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 640907825}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &620626831
 GameObject:
   m_ObjectHideFlags: 0
@@ -1115,6 +1158,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &640907825 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4499996289917704, guid: 91c4f61b3c8de2e4a903e66a1c3f8974,
+    type: 2}
+  m_PrefabInternal: {fileID: 213104877}
 --- !u!1001 &702317530
 Prefab:
   m_ObjectHideFlags: 0
@@ -1487,12 +1535,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30f5d7b31bf276441918f82486aee3a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    name: Co, A Cobra
-    sentences:
-    - "eu tenho aids bro eu  sofro as fuck eu s\xF3 queria morre meus pais me odeiam"
-    - AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-    - cu
 --- !u!114 &1439239116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1722,3 +1764,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeUI: {fileID: 1939409923}
+--- !u!1 &1942400771
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1942400772}
+  m_Layer: 10
+  m_Name: LadderCheckStart
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1942400772
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1942400771}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.56, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 640907825}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
