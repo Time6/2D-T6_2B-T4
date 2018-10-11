@@ -31,7 +31,7 @@ public bool koalaPunkStarted;
 {
 	if(!koalaPunkStarted)
 	{
-      StartCoroutine("KoalaPunk");
+                    koalaPunkStarted = true;
     }
 
 }
@@ -41,10 +41,17 @@ public bool koalaPunkStarted;
 		
 	}
 
-	public IEnumerator KoalaPunk()
-	{
-koalaPunkStarted = true;
-return null;
+    void FixedUpdate()
+    {
 
-	}
+        if (koalaPunkStarted)
+        {
+
+
+        }
+
+    }
+
+
+	
 }
