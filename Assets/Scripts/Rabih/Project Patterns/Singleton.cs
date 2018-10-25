@@ -6,6 +6,10 @@ public class Singleton : MonoBehaviour {
 
     public GameObject player;
 
+    public PathManager pathManager;
+
+    public PlayerController playerScript;
+
 
 	private static Singleton instance;
 
