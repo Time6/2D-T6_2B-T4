@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     //movimentação
     private float axisX;
-
+     
     public float speed;
     public float jumpForce;
     public float groundChecksize;
@@ -44,12 +44,18 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
+        
+       //comente as 3 proximas linhas para testar o mobile
+       /*/  if(!Application.isMobilePlatform)
+        {
         axisX = Input.GetAxis("Horizontal");
-        if (Input.GetAxis("Jump") > 0)
+        }/* */
+    
+
+        if (Input.GetAxis("Jump")> 0)
         {
             Jump();
+            
         }
     }
 
@@ -57,6 +63,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
 
     {
+        
         GroundCheck();
         Movimentacao();
         LadderCheck();
@@ -68,10 +75,10 @@ public class PlayerController : MonoBehaviour
 
     }
 
-
+#region Movement
     void Movimentacao()
     {
-        if (!Application.isMobilePlatform)
+       
             if (axisX != 0 && onGround && !talking)
             {
 
@@ -88,6 +95,9 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    #endregion Movement
+
+#region Checkers
     void GroundCheck()
     {
         onGround = Physics2D.OverlapCircle(groundCheck.position, groundChecksize, platformMask);
@@ -104,7 +114,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-
+#endregion Checkers
     void Climbing()
     {
 
@@ -117,32 +127,41 @@ public class PlayerController : MonoBehaviour
     #region Mobile
     public void MoveRight()
     {
-        rb.velocity = new Vector2(speed * Time.deltaTime, rb.velocity.y);
+       axisX = 1;
     }
     public void MoveLeft()
     {
-        rb.velocity = new Vector2(-speed * Time.deltaTime, rb.velocity.y);
+        axisX = -1;
     }
 
     public void StopMoveRight()
     {
-        rb.velocity = new Vector2(0, rb.velocity.y);
+      axisX = 0;
     }
     public void StopMoveLeft()
     {
-        rb.velocity = new Vector2(0, rb.velocity.y);
+        axisX = 0;
 
     }
+    public void JumpMobile()
+    {
+         if (onGround && !talking)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        }
+      
+    }
+  
+
     #endregion Mobile
 
+
+#region Gizmos & Physics
     void OnDrawGizmos() {
 
         Gizmos.color = Color.yellow;
         Gizmos.DrawSphere(groundCheck.position, groundChecksize);
         Gizmos.DrawSphere(transform.position, climbingCheckRadius);
-
-
-
     }
 
 
@@ -159,7 +178,7 @@ public class PlayerController : MonoBehaviour
 
         }
     }
-
+#endregion Gizmos & Physics
 
 }
 
