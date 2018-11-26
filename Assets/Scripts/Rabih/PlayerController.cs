@@ -29,6 +29,9 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     public int actualRoom;
 
+    //?
+    public Transform upLimit;
+    public Transform downLimit;
 
 
     void Start()
@@ -44,12 +47,13 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+       transform.position = new Vector2(transform.position.x , Mathf.Clamp(transform.position.y, downLimit.position.y, upLimit.position.y));
        //comente as 3 proximas linhas para testar o mobile
-       /*/  if(!Application.isMobilePlatform)
+       if(!Application.isMobilePlatform)
         {
         axisX = Input.GetAxis("Horizontal");
-        }/* */
+        }
     
 
         if (Input.GetAxis("Jump")> 0)
@@ -67,7 +71,7 @@ public class PlayerController : MonoBehaviour
         GroundCheck();
         Movimentacao();
         LadderCheck();
-        Climbing();
+       
         if (talking)
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
@@ -110,19 +114,21 @@ public class PlayerController : MonoBehaviour
         {
 
             axisY = Input.GetAxis("Vertical");
+            rb.velocity = new Vector2(rb.velocity.x, gettingUpSpeed * axisY);
+            print("ignorando");
+            Physics2D.IgnoreLayerCollision(10, 8, true);
+        }
+
+        else
+        {
+            print("nao ignorando");
+            Physics2D.IgnoreLayerCollision(10, 8, false);
         }
 
     }
 
 #endregion Checkers
-    void Climbing()
-    {
-
-        rb.velocity = new Vector2(rb.velocity.x, gettingUpSpeed * axisY);
-        isClimbing = Physics2D.OverlapCircle(transform.position, climbingCheckRadius, ladderMask);
-
-
-    }
+   
 
     #region Mobile
     public void MoveRight()
